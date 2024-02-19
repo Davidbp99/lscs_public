@@ -5,6 +5,12 @@ force.PrintName = "Throw"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Throw your Lightsaber"
 force.id = "throw"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.StartUse = function( ply )
 	if ply:InVehicle() then return end
 
@@ -66,6 +72,12 @@ force.PrintName = "Jump"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Force Assisted Jump"
 force.id = "jump"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.OnClk =  function( ply, TIME )
 	if not ply._lscsAssistedJump then return end
 
@@ -134,6 +146,12 @@ force.PrintName = "Push"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Push things around"
 force.id = "push"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.StartUse = function( ply )
 	if ply:lscsGetForce() < 20 then return end
 
@@ -183,6 +201,12 @@ force.PrintName = "Pull"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Pull things towards yourself"
 force.id = "pull"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.StartUse = function( ply )
 	if ply:lscsGetForce() < 20 then return end
 
@@ -233,6 +257,12 @@ force.PrintName = "Sense"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Augmented Vision. See through the lies of the Jedi and through walls"
 force.id = "sense"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.OnClk =  function( ply, TIME )
 	if not ply:GetNWBool( "_lscsForceSense", false ) then return end
 
@@ -280,6 +310,12 @@ force.PrintName = "Heal"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Heal yourself using the Force"
 force.id = "heal"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.StartUse = function( ply )
 	local Time = CurTime()
 
@@ -315,6 +351,12 @@ force.PrintName = "Replenish"
 force.Author = "Blu-x92 / Luna"
 force.Description = "A Dark Side ability that regains Force from Health"
 force.id = "replenish"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.StartUse = function( ply )
 	local Time = CurTime()
 
@@ -362,6 +404,12 @@ force.PrintName = "Immunity"
 force.Author = "Blu-x92 / Luna"
 force.Description = "Incoming Force Power attacks are absorbed and regain Force Points. Also gives a permanent immunity against incoming Force Powers as long your own Force Points are above 50% even when this Power is not activated. Only the weak minded don't learn this ability."
 force.id = "immunity"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.OnClk =  function( ply, TIME )
 	if not ply:GetNWBool( "_lscsForceProtect", false ) then return end
 
@@ -488,6 +536,12 @@ force.PrintName = "Lightning"
 force.Author = "Blu-x92 / Luna"
 force.Description = "A Dark Side ability that fires Lightning Bolts out of your Hand"
 force.id = "lightning"
+force.Usergroups = {
+	["superadmins"] = true,
+}
+force.Teams = {
+	[TEAM_JEDI] = true,
+}
 force.OnClk =  function( ply, TIME )
 	if not ply._lscsLightningTime then return end
 

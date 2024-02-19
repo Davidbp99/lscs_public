@@ -115,6 +115,8 @@ function LSCS:RegisterForce( data )
 		author = data.Author,
 		type = "force",
 		Type = "Force",
+		UserGroups = data.Usergroups,
+		Team = data.Teams,
 		class = class,
 		Equip = (data.Equip or fallback),
 		UnEquip = (data.UnEquip or fallback),
