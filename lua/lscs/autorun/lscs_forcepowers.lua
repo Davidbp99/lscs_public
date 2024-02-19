@@ -149,7 +149,7 @@ if SERVER then
 		if not ply._lscsUsedPowers then
 			ply._lscsUsedPowers = {}
 		end
-		if !item.Usergroups[ply:GetUserGroups()] or !item.Teams[ply:Team()] then return end
+		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
 
 		if Activate then
 			ply._lscsUsedPowers[ ID ] = true
@@ -166,7 +166,7 @@ if SERVER then
 
 	hook.Add( "LSCS:OnPlayerEquippedItem", "!!!!lscs_forcepower_equip_handler", function( ply, item )
 		if not IsValid( ply ) or not item then return end
-		if !item.Usergroups[ply:GetUserGroups()] or !item.Teams[ply:Team()] then return end
+		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
 		if item.type == "force" then
 			ProtectedCall( function() LSCS.Force[ item.id ].Equip( ply ) end )
 		end
@@ -174,7 +174,7 @@ if SERVER then
 
 	hook.Add( "LSCS:OnPlayerUnEquippedItem", "!!!!lscs_forcepower_unequip_handler", function( ply, item )
 		if not IsValid( ply ) or not item then return end
-		if !item.Usergroups[ply:GetUserGroups()] or !item.Teams[ply:Team()] then return end
+		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
 		if item.type == "force" then
 			ProtectedCall( function() LSCS.Force[ item.id ].UnEquip( ply ) end )
 		end
