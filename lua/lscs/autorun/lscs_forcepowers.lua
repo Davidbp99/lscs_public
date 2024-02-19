@@ -149,9 +149,10 @@ if SERVER then
 		if not ply._lscsUsedPowers then
 			ply._lscsUsedPowers = {}
 		end
-		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
+		
 
 		if Activate then
+			if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
 			ply._lscsUsedPowers[ ID ] = true
 
 			ProtectedCall( function() LSCS.Force[ item.id ].StartUse( ply ) end )
