@@ -154,12 +154,12 @@ if SERVER then
 		if Activate then
 			if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
 			ply._lscsUsedPowers[ ID ] = true
-
+			hook.Run("LSCS:ForcePowerUsed", nil, ply, item)
 			ProtectedCall( function() LSCS.Force[ item.id ].StartUse( ply ) end )
 		else
 			if ply._lscsUsedPowers[ ID ] then
 				ply._lscsUsedPowers[ ID ] = nil
-
+				hook.Run("LSCS:ForcePowerEnded", nil, ply, item)
 				ProtectedCall( function() LSCS.Force[ item.id ].StopUse( ply ) end )
 			end
 		end
@@ -200,7 +200,7 @@ if SERVER then
 
 		net.Send( ply )
 	end )
-else
+else -- below is client shit
 	local X = ScrW() - 110
 	local Y = ScrH() - 100
 
