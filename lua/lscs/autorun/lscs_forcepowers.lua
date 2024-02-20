@@ -154,7 +154,7 @@ if SERVER then
 		
 
 		if Activate then
-			if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
+			if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[team.GetName(ply:Team())] then return end
 			ply._lscsUsedPowers[ ID ] = true
 			hook.Run("LSCS:ForcePowerUsed", nil, ply, item)
 			ProtectedCall( function() LSCS.Force[ item.id ].StartUse( ply ) end )
@@ -169,7 +169,7 @@ if SERVER then
 
 	hook.Add( "LSCS:OnPlayerEquippedItem", "!!!!lscs_forcepower_equip_handler", function( ply, item )
 		if not IsValid( ply ) or not item then return end
-		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
+		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[team.GetName(ply:Team())] then return end
 		if item.type == "force" then
 			ProtectedCall( function() LSCS.Force[ item.id ].Equip( ply ) end )
 		end
@@ -177,7 +177,7 @@ if SERVER then
 
 	hook.Add( "LSCS:OnPlayerUnEquippedItem", "!!!!lscs_forcepower_unequip_handler", function( ply, item )
 		if not IsValid( ply ) or not item then return end
-		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[ply:Team()] then return end
+		if !item.Usergroups[ply:GetUserGroup()] or !item.Teams[team.GetName(ply:Team())] then return end
 		if item.type == "force" then
 			ProtectedCall( function() LSCS.Force[ item.id ].UnEquip( ply ) end )
 		end
