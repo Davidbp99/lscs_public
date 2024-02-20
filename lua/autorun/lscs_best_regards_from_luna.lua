@@ -19,7 +19,7 @@ function LSCS:GetVersion()
 end
 
 function LSCS:CheckUpdates()
-	http.Fetch("https://raw.githubusercontent.com/Blu-x92/lscs_public/main/lua/autorun/lscs_best_regards_from_luna.lua", function(contents,size) 
+	http.Fetch("https://raw.githubusercontent.com/Davidbp99/lscs_public/main/lua/autorun/lscs_best_regards_from_luna.lua", function(contents,size) 
 		local Entry = string.match( contents, "LSCS.VERSION%s=%s%d+" )
 
 		if Entry then
@@ -33,7 +33,7 @@ function LSCS:CheckUpdates()
 				print("[LSCS] is up to date, Version: "..LSCS:GetVersion())
 			else
 				print("[LSCS] a newer version is available! Version: "..LSCS.VERSION_GITHUB..", You have Version: "..LSCS:GetVersion())
-				print("[LSCS] get the latest version at https://github.com/Blu-x92/LUNA_SWORD_COMBAT_SYSTEM")
+				print("[LSCS] get the latest version at https://github.com/Davidbp99/lscs_public")
 
 				if CLIENT then 
 					timer.Simple(18, function() 

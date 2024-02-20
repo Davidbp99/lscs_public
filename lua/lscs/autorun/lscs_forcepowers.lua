@@ -134,6 +134,7 @@ if SERVER then
 
 		if ply:InVehicle() and not ply:GetAllowWeaponsInVehicle() then return end
 
+
 		local ID = net.ReadInt( 8 )
 		local Activate = net.ReadBool()
 		local ForcePowers = ply:lscsGetForceAbilities()
@@ -145,7 +146,8 @@ if SERVER then
 		local item = selectedF.item
 
 		if not item then return end
-
+		local allowed = hook.Call("LSCS:AllowedForce", nil, ply, item) or true
+		if !allowed then return end
 		if not ply._lscsUsedPowers then
 			ply._lscsUsedPowers = {}
 		end
