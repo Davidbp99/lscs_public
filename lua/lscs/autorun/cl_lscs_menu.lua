@@ -2070,6 +2070,8 @@ end
 
 function LSCS:OpenMenu()
 	if not IsValid( Frame ) then
+		local allowed = hook.Call("LSCS:AllowedForceClient", nil, ply) or true
+		if !allowed then return end
 		Frame = vgui.Create( "DFrame" )
 		Frame:SetSize( FrameSizeX, FrameSizeY )
 		Frame:SetTitle( "" )
