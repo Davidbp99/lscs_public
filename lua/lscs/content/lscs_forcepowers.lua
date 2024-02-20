@@ -76,7 +76,9 @@ force.Usergroups = {
 	["superadmins"] = true,
 }
 force.Teams = {
-	[TEAM_JEDI] = true,
+	["Jedi Guardian Knight"] = true,
+    ["Jedi Guardian Master"] = true,
+    ["Jedi Consular Knight"] = true,
 }
 force.OnClk =  function( ply, TIME )
 	if not ply._lscsAssistedJump then return end
@@ -363,7 +365,9 @@ force.Usergroups = {
 	["superadmins"] = true,
 }
 force.Teams = {
-	[TEAM_JEDI] = true,
+	["Jedi Guardian Knight"] = true,
+    ["Jedi Guardian Master"] = true,
+    ["Jedi Consular Knight"] = true,
 }
 force.StartUse = function( ply )
 	local Time = CurTime()
